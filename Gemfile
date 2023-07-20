@@ -79,3 +79,5 @@ gem 'activestorage'
 
 gem "aws-sdk-s3"
 
+
+gem "faker", "~> 3.2"

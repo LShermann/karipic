@@ -1,26 +1,21 @@
 <div id="<%= dom_id picture %>">
-  <p>
-    <strong>Name:</strong>
+
+<div class="card text-center">
+  <div class="card-header">
     <%= picture.name %>
-  </p>
-
-  <p>
-    <strong>Description:</strong>
-    <%= picture.description %>
-  </p>
-
-</div>
-
-<div class="col-3">
- <div class="card">
+  </div>
+  <div class="card-body">
+  <div class="card-img-top">
  <%= image_tag picture.images[0], class: 'card-img-top' %>
- <div class="card-body">
-
- <h5 class="card-title"><%= picture.name %></h5>
- <p class="card-text">
- <strong>Description:</strong>
- <%= picture.description %>
- </p>
  </div>
- </div>
+    <p class="card-text">
+      <%= picture.description %>
+    </p>
+  <a href="#" class="btn btn-primary">
+    <%= link_to "Show this post", picture %>
+  </a>
+</div>
+  <div class="card-footer text-body-secondary">
+    <%= picture.updated_at %>
+  </div>
 </div>

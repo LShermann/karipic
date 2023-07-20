@@ -1,5 +1,9 @@
 class PicturesController < ApplicationController
   before_action :set_picture, only: %i[ show edit update destroy ]
+  before_action only: [:new, :create, :edit, :update, :destroy] do
+    authorize_request(["admin"])
+   end
+   
 
   # GET /pictures or /pictures.json
   def index
@@ -8,6 +12,8 @@ class PicturesController < ApplicationController
 
   # GET /pictures/1 or /pictures/1.json
   def show
+    @comment = Comment.new
+    @comments = @picture.comments
   end
 
   # GET /pictures/new
