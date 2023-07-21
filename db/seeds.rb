@@ -1,3 +1,4 @@
+
 i = 0
     until User.count == 10 do
     Image.create!(url: Faker::Avatar.image, imageable: User.create!(email: "test#{i}@gmail", password: "123456", "password_confirmation": "123456", name: Faker::Name.name, phone: "+5698332393#{i}"))
